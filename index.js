@@ -15,26 +15,26 @@ for(const file of commandFiles){
 }
 
 //Calling the userDataPet file
-var userDataPet = JSON.parse(fs.readFileSync('./data/userDataPet.JSON'))
+//var userDataPet = JSON.parse(fs.readFileSync('./data/userDataPet.JSON'))
 
-var numberOfRole;
+//var numberOfRole;
 
 
 client.once('ready', () =>{
     console.log('Bot online !');
     numberOfRole = 0;
 
-    let roleJSON = require("./data/roleData.json");
+    /*let roleJSON = require("./data/roleData.json");
     roleJSON = {};
 
     fs.writeFile("./data/roleData.json", JSON.stringify(roleJSON), (err) => {
         if(err) console.log(err)
-    });
+    });*/
 })
 
 client.on('message', message=>{
     
-    if(message.author.bot && message.embeds){
+    /*if(message.author.bot && message.embeds){
         const embed = message.embeds.find(msg => msg.title === ':white_check_mark:  Chose your role !')
         if(embed){
             let roleJSON = require("./data/roleData.json");
@@ -53,7 +53,7 @@ client.on('message', message=>{
                 i++;
             }
         }
-    }
+    }*/
 
 	if(!message.content.startsWith(config.prefix) || message.author.bot) return;
 
