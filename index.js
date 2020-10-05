@@ -61,7 +61,7 @@ client.on('message', message=>{
 
     switch(args[1]){
     	case 'help': 
-            if(args[2] == ''){
+            if(!args[3]){
                 client.commands.get('help').execute(message, args, client);
             } else{invalidCommand(message);}
             break;
