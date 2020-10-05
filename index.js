@@ -5,7 +5,7 @@ const config = require('./config.json');
 
 const client = new discord.Client();
 
-//Using a file to store all the commands
+//Using a folder to store all the commands
 client.commands = new discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
@@ -20,10 +20,13 @@ client.once('ready', () =>{
     numberOfRole = 0;
 })
 
+
+
 client.on('message', message=>{
 
 	if(!message.content.startsWith(config.prefix) || message.author.bot) return;
 
+    //Split the command into a list
     const args = message.content.substring(config.prefix.length).split(/ +/);
 
     switch(args[1]){
@@ -60,9 +63,14 @@ client.on('message', message=>{
     		client.commands.get('invalidCommand').execute(message, args, client);
     }
 
-    })
+})
+
+
+
 
 client.on('messageReactionAdd',(reaction, user) => {})
 
 
+
+//Used to connect the bot, the token is stored in Heroku
 client.login(process.env.TOKEN);
