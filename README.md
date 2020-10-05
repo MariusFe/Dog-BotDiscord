@@ -7,20 +7,15 @@ https://discord.com/api/oauth2/authorize?client_id=688456016966451207&permission
 
 Here are his main commands, others will follow throughout time:
 
-help
-  Show the help page
+help: Show the help page
   
-pet
-  Pet the dog once
+pet: Pet the dog once
   
-pet count
-  Show the total number of petting
+pet count: Show the total number of petting
   
-invite
-  Show the link to invite the bot on your server
+invite: Show the link to invite the bot on your server
   
-weather
-  Show the current weather in Angers, France
+weather: Show the current weather in Angers, France
   
   
 Made by Marius Ferrieres, 08/2020
