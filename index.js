@@ -150,7 +150,7 @@ function invalidCommand(message){
 
     const embed = new discord.MessageEmbed()
     .setColor('#FF0000')
-    .setTitle(':x: Invalid Command')
+    .setTitle('<:wut:762572564005912617> Invalid Command')
     .setDescription('Are you sure you are using the correct command ? Type `!dog help` to show all the commands');
 
     message.channel.send(embed);
