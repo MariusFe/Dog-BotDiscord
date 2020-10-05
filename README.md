@@ -9,12 +9,16 @@ Here are his main commands, others will follow throughout time:
 
 help
   Show the help page
+  
 pet
   Pet the dog once
+  
 pet count
   Show the total number of petting
+  
 invite
   Show the link to invite the bot on your server
+  
 weather
   Show the current weather in Angers, France
   
