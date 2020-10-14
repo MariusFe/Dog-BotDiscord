@@ -6,7 +6,7 @@ let userJSON = require("../data/userDataPet.json");
 
 module.exports = {
 	name: 'count',
-	description: "Show the number of petting",
+	description: "Show the number of pettings",
 	usage: "!dog count",
 	execute(message,args,client){
 		
