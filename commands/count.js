@@ -63,7 +63,7 @@ module.exports = {
 
     		const embed = new discord.MessageEmbed()
     		.setColor('#FF0000')
-    		.setTitle('<:wut:698139865480429662> Not in DM')
+    		.setTitle('<:wut:760160064572358696> Not in DM')
     		.setDescription('This command cannot work in DM (until now)');
 
     		message.channel.send(embed);
