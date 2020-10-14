@@ -1,6 +1,6 @@
 # Dog-BotDiscord
 
-This project is about a Dicord Bot name Dog.
+This project is about a Dicord Bot named Dog.
 
 You can invite him on your Discord Server by following this link:
 https://discord.com/api/oauth2/authorize?client_id=688456016966451207&permissions=8&scope=bot
