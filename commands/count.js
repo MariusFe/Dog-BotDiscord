@@ -44,7 +44,7 @@ module.exports = {
 
 		const embed = new discord.MessageEmbed()
 		.setColor('#3368FF')
-		.setTitle('Number of petting')
+		.setTitle('Number of pettings')
 		.addField('This server','The dog has been petted a total of `'+thisGuildCount+'` times on this server')
 		.addField('Overall','The dog has been petted a total of `'+ totalGuildCount +'` times on all the servers')
 		.addField(`${message.author.username}`,'You petted a total of `'+ thisUserCount +'` times the dog')
