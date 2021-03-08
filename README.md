@@ -40,4 +40,5 @@ Here are his main commands, others will follow throughout time:
 For more informations please contact me on Discord: KayaKill#7254
   
 Made by Marius Ferrieres, 08/2020
+
 Updates v2.0: stonking game, 03/2021
