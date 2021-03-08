@@ -26,6 +26,8 @@ client.on('message', message=>{
 
 
 	if(!message.content.startsWith(config.prefix) || message.author.bot) return;
+	
+	console.log('Server : ' + message.channel.guild.name + ' | Username: ' + message.author.username + ' | Command: ' + message.content);
 
     //Split the command into a list
     const args = message.content.substring(config.prefix.length).split(/ +/);
