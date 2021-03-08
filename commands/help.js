@@ -4,7 +4,7 @@ const {token,prefix} = require('../config.json');
 module.exports = {
 	name: 'help',
 	description: "Show the list of all the commands",
-	usage: "!dog help",
+	usage: prefix + " help",
 	execute(message,args,client){
 		
 		client.users.fetch('290543889117609984').then(myUser =>{
@@ -19,6 +19,14 @@ module.exports = {
     			.addField('pet count', 'Show the total number of petting')
                 .addField('invite','Show the link to invite the bot on your server')
                 .addField('weather','Show the current weather in Angers, France')
+                .addField('bet start','Start playing with money')
+                .addField('bet *amount*','Bet your money')
+                .addField('bet balance','Check your balance')
+                .addField('stock start','Start stonking, it gives you 10 BTC-USD')
+                .addField('stock sell *object* *amount*','Sell a certain amount of shares at its current value in its currency')
+                .addField('stock buy *oject* *amount*','Buy a certain amount of shares at its current value in its currency')
+                .addField('stock balance','Check your balance')
+                .addField('stock help','Show a more detailed help for the stonking')
     			//.addField('pet top', 'Show the top users of this server')
     			//.addField('pet top total', 'Show the top users worldwide')
     			.setFooter('Made by ' + myUser.tag, myUser.avatarURL());

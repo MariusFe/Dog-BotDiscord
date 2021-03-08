@@ -2,6 +2,7 @@ const discord = require('discord.js');
 const {token,prefix} = require('../config.json');
 const fs = require('fs');
 let guild = require("../data/rawUserDataPet.json");
+let betData = require("../data/userDataBet.json")
 
 module.exports = {
 	name: 'pet',
@@ -31,6 +32,10 @@ module.exports = {
 			if(err) console.log(err)
 		});
 
+		if(betData[message.author.id]){
+			betData[message.author.id].balance = parseInt(betData[message.author.id].balance) + 100;
+			betData[message.author.id].given = parseInt(betData[message.author.id].given) + 100;
+		}
 
 		const embed = new discord.MessageEmbed()
     		.setColor('#3368FF')
@@ -42,7 +47,7 @@ module.exports = {
 
     		const embed = new discord.MessageEmbed()
     		.setColor('#FF0000')
-    		.setTitle('<:wut:760160064572358696> Not in DM')
+    		.setTitle('<:wut:698139865480429662> Not in DM')
     		.setDescription('This command cannot work in DM (until now)');
 
     		message.channel.send(embed);

@@ -5,31 +5,26 @@ let guild = require("../data/rawUserDataPet.json");
 let userJSON = require("../data/userDataPet.json");
 
 module.exports = {
-	name: 'count',
-	description: "Show the number of petting",
-	usage: "!dog count",
+	name: 'top',
+	description: "Show the top users of the server, and the position of the user asking for it",
+	usage: "!dog top",
 	execute(message,args,client){
-		
+
 		if(message.guild == null){
 			invalidCommand(message);
 			return;
 		}
-		
-		var thisGuildCount = 0;
-		var totalGuildCount = 0;
-		var thisUserCount = 0;
+
 		userJSON = {};
+
+		var thisUserCount = 0;
 
 		for(var _guilds in guild){
 			for(var _users in guild[_guilds].users){
-				if(message.guild.id == _guilds){
-					thisGuildCount = thisGuildCount + guild[_guilds].users[_users].pet;
-				}
-				totalGuildCount = totalGuildCount + guild[_guilds].users[_users].pet;
 				if(!userJSON[_users]){
-						userJSON[_users] = {
-							 pet: 0,
-							 position: 0
+						userJSON[_users] ={
+							pet: 0,
+							position: 0
 						}
 					}
 				if(message.author.id == _users){
@@ -39,23 +34,21 @@ module.exports = {
 			}
 		}
 
+
+		const embed = new discord.MessageEmbed()
+		.setColor()
+		.setTitle()
+		.setDescription()
 		
 
 
-		const embed = new discord.MessageEmbed()
-		.setColor('#3368FF')
-		.setTitle('Number of petting')
-		.addField('This server','The dog has been petted a total of `'+thisGuildCount+'` times on this server')
-		.addField('Overall','The dog has been petted a total of `'+ totalGuildCount +'` times on all the servers')
-		.addField(`${message.author.username}`,'You petted a total of `'+ thisUserCount +'` times the dog')
-		.setThumbnail(message.author.avatarURL())
+		for(var i in userJSON){
+			if(userJSON[i] == message.author.id){
 
-		message.channel.send(embed);
+			}
+		}
 
 		fs.writeFile("./data/userDataPet.json", JSON.stringify(userJSON), (err) => {
-			if(err) console.log(err)
-		});
-		fs.writeFile("./data/rawUserDataPet.json", JSON.stringify(guild), (err) => {
 			if(err) console.log(err)
 		});
 
