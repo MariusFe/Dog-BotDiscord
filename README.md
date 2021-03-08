@@ -35,6 +35,13 @@ Here are his main commands, others will follow throughout time:
 
 **stock help**: Show a more detailed help for the stonking
 
+## ToDo
+
+- [ ] convert currency to be able to trade in other markets
+- [ ] loans, with interests management
+- [ ] donations
+- [ ] better bet system, more enjoyable than just !dog bet
+
 ## About
 
 For more informations please contact me on Discord: KayaKill#7254
