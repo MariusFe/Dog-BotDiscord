@@ -42,6 +42,10 @@ Here are his main commands, others will follow throughout time:
 - [ ] donations
 - [ ] better bet system, more enjoyable than just !dog bet
 
+## Running the bot
+
+Place yourself in the bot folder and then type: ```node .```
+
 ## About
 
 For more informations please contact me on Discord: KayaKill#7254
