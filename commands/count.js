@@ -50,7 +50,7 @@ module.exports = {
 		.addField(`${message.author.username}`,'You petted a total of `'+ thisUserCount +'` times the dog')
 		.setThumbnail(message.author.avatarURL())
 
-		message.channel.send(embed);
+		message.channel.send({ embeds: [embed] });
 
 		fs.writeFile("./data/userDataPet.json", JSON.stringify(userJSON), (err) => {
 			if(err) console.log(err)
@@ -66,7 +66,7 @@ module.exports = {
     		.setTitle('<:wut:698139865480429662> Not in DM')
     		.setDescription('This command cannot work in DM (until now)');
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

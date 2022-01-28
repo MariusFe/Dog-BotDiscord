@@ -59,8 +59,11 @@ module.exports = {
 				}
 				fs.writeFile("./data/userDataStock.json", JSON.stringify(stockData), (err) => {
 					if(err) console.log(err)
-				});
-				message.channel.send("You succesfully sold " + amount + " " + args[3] + " shares at " + price + quotes.price.currencySymbol + " each.");
+				});				
+
+				const embed = new discord.MessageEmbed()
+				.setColor('#3368FF')
+				.setTitle("You succesfully sold " + amount + " " + args[3] + " shares at " + price + quotes.price.currencySymbol + " each.");
 			});
 			return;
 		}
@@ -116,7 +119,11 @@ module.exports = {
 					if(err) console.log(err)
 				});
 
-				message.channel.send("You succesfully sold " + amount + " " + args[3] + " shares at " + price + quotes.price.currencySymbol + " each.");
+				const embed = new discord.MessageEmbed()
+				.setColor('#3368FF')
+				.setTitle("You succesfully sold " + amount + " " + args[3] + " shares at " + price + quotes.price.currencySymbol + " each.");
+		
+				message.channel.send({ embeds: [embed] });
 		});
 
 
@@ -130,7 +137,7 @@ module.exports = {
     		.setTitle('<:wut:760160064572358696> Error')
     		.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 
 		}
 	}

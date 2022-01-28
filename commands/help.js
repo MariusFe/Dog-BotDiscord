@@ -22,16 +22,13 @@ module.exports = {
                 .addField('bet start','Start playing with money')
                 .addField('bet *amount*','Bet your money')
                 .addField('bet balance','Check your balance')
-                .addField('stock start','Start stonking, it gives you 10 BTC-USD')
-                .addField('stock sell *object* *amount*','Sell a certain amount of shares at its current value in its currency')
-                .addField('stock buy *oject* *amount*','Buy a certain amount of shares at its current value in its currency')
-                .addField('stock balance','Check your balance')
                 .addField('stock help','Show a more detailed help for the stonking')
+                .addField('sex help', 'Show a more detailed page for the SAGI Experience game')
     			//.addField('pet top', 'Show the top users of this server')
     			//.addField('pet top total', 'Show the top users worldwide')
     			.setFooter('Made by ' + myUser.tag, myUser.avatarURL());
 
-    			message.channel.send(embed);
+    			message.channel.send({ embeds: [embed] });
     		})
 	}
 }

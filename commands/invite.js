@@ -11,6 +11,6 @@ module.exports = {
     	.setTitle('Click on the link to invite the dog bot on your server!')
     	.setDescription('https://discord.com/api/oauth2/authorize?client_id=688456016966451207&permissions=8&scope=bot')
     	.setThumbnail('https://bon-toutou-90.webself.net/file/si939013/1883A4C1-9182-4B76-8F95-C5C770D74901-fi14369250x1000.jpeg')
-    	message.channel.send(embed);
+    	message.channel.send({ embeds: [embed] });
 	}
 }

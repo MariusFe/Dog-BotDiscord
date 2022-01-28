@@ -17,7 +17,11 @@ module.exports = {
 					invalidCommand(message,err);
 					return;
 				}
-				message.channel.send("Price of " + quotes.price.shortName + ' ('+ quotes.price.symbol + ") : " + quotes.price.regularMarketPrice + quotes.price.currencySymbol + " (" + quotes.price.regularMarketChangePercent*100 + "% since market opening)");
+				const embed = new discord.MessageEmbed()
+				.setColor('#3368FF')
+				.setTitle("Price of " + quotes.price.shortName + ' ('+ quotes.price.symbol + ") : " + quotes.price.regularMarketPrice + quotes.price.currencySymbol + " (" + quotes.price.regularMarketChangePercent*100 + "% since market opening)");
+				
+				message.channel.send({ embeds: [embed] });
 		});
 
 		function invalidCommand(message,error){
@@ -27,7 +31,7 @@ module.exports = {
     		.setTitle('<:wut:760160064572358696> Error')
     		.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

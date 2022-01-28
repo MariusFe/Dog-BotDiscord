@@ -2,8 +2,20 @@ const discord = require('discord.js');
 const fs = require('fs');
 const request = require('request');
 const config = require('./config.json');
+require('dotenv').config();
 
-const client = new discord.Client();
+const {Intents, Client} = require('discord.js');
+const client = new Client({
+    intents: [
+        "GUILDS",
+        "GUILD_MESSAGES",
+        "DIRECT_MESSAGES",
+        "DIRECT_MESSAGE_TYPING"
+    ],
+    partials: [
+        "CHANNEL",
+    ]
+});
 
 //Using a folder to store all the commands
 client.commands = new discord.Collection();
@@ -26,11 +38,17 @@ client.on('message', message=>{
 
 
 	if(!message.content.startsWith(config.prefix) || message.author.bot) return;
-	
-	console.log('Server : ' + message.channel.guild.name + ' | Username: ' + message.author.username + ' | Command: ' + message.content);
 
     //Split the command into a list
     const args = message.content.substring(config.prefix.length).split(/ +/);
+
+
+    if(message.channel.type == 'DM'){
+        console.log('Server : DM | Username: ' + message.author.username + ' | Command: ' + message.content);
+    }else{
+        console.log('Server : ' + message.channel.guild.name + ' | Username: ' + message.author.username + ' | Command: ' + message.content);
+    }
+
 
     switch(args[1]){
     	case 'help': 
@@ -108,6 +126,62 @@ client.on('message', message=>{
 
             break;
 
+        case 'chie':
+            message.channel.send(":poop:");
+
+            break;
+
+        case 'sex':
+
+            if(!args[2]){
+                client.commands.get('sex').execute(message, args, client); //Introduction message
+            }
+            else if(args[2] == "start"){
+                if(args[3]){client.commands.get('invalidCommand').execute(message, args, client);}
+                else{client.commands.get('sexStart').execute(message, args, client);}
+            }
+            else if(args[2] == "help"){
+                if(args[3]){client.commands.get('invalidCommand').execute(message, args, client);}
+                else{client.commands.get('sexHelp').execute(message, args, client);}
+            }
+            else if (args[2] == "claim"){
+                if(args[3] == "soul"){
+                    if(args[4]){client.commands.get('invalidCommand').execute(message, args, client);}
+                    else{client.commands.get('sexClaimSoul').execute(message, args, client);}
+                }
+                else{client.commands.get('sexClaim').execute(message, args, client);}
+            }
+            else if (args[2] == "profile"){
+                if(args[3]){client.commands.get('invalidCommand').execute(message, args, client);}
+                else{client.commands.get('sexProfile').execute(message, args, client);}
+            }
+            else if (args[2] == "buy"){
+                client.commands.get('sexBuy').execute(message, args, client);
+            }
+            else {client.commands.get('invalidCommand').execute(message, args, client);}
+
+            break;
+
+
+
+
+        /*case 'fish':
+
+            if(!args[2]){
+                client.commands.get('fish').execute(message, args, client);
+            }
+            else if(args[2] == "start"){
+                if(args[3]){client.commands.get('invalidCommand').execute(message, args, client);}
+                else{client.commands.get('fishStart').execute(message, args, client);}
+            }
+            else if(args[2] == "help"){
+                if(args[3]){client.commands.get('invalidCommand').execute(message, args, client);}
+                else{client.commands.get('fishHelp').execute(message, args, client);}
+            }
+            else {client.commands.get('invalidCommand').execute(message, args, client);}
+
+            break;*/
+
         /*case 'role': 
             client.commands.get('roleUser').execute(message, args, client, numberOfRole); 
             numberOfRole++;
@@ -127,4 +201,4 @@ client.on('messageReactionAdd',(reaction, user) => {})
 
 
 //Used to connect the bot, the token is stored in Heroku
-client.login(config.token);
+client.login(process.env.TOKEN);

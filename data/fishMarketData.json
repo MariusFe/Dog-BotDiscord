@@ -1,0 +1,26 @@
+{
+	"fishes":{
+		"cod" :{
+			"fished": 0,
+			"sold": 0,
+			"sizeMax":90,
+			"sizeMin":60,
+			"weightMax":4,
+			"weightMin":2,
+			"priceCurrent":10,
+			"priceMax":1,
+			"priceMin":1
+		},
+		"sardine" :{
+			"fished": 0,
+			"sold": 0,
+			"sizeMax":20,
+			"sizeMin":15,
+			"weightMax":0.12,
+			"weightMin":0.1,
+			"priceCurrent":400,
+			"priceMax":1,
+			"priceMin":1
+		}
+	}
+}

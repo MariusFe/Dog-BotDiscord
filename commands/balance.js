@@ -21,7 +21,7 @@ module.exports = {
     			.setTitle('You have ' + betData[message.author.id].balance + ' in your balance.')
     			.setAuthor(myUser.tag, myUser.avatarURL())
     			.setDescription('Lost: '+betData[message.author.id].lost + '\n Earned: ' + betData[message.author.id].earned);
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		})
 
 
@@ -33,7 +33,7 @@ module.exports = {
     		.setTitle('<:wut:760160064572358696> Error')
     		.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 
 	}

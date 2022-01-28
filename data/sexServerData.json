@@ -1,0 +1,65 @@
+{
+	"rate":1.05,
+	"adds":{
+		"deg":{
+			"income":10,
+			"price":100,
+			"emote":":student:",
+			"desc":"Degree"
+		},
+		"pat":{
+			"income":400,
+			"price":4000,
+			"emote":":hugging:",
+			"desc":"Godon's pats"
+		},
+		"cof":{
+			"income":2000,
+			"price":20000,
+			"emote":":coffee:",
+			"desc":"Coffee"
+		},
+		"pc":{
+			"income":11000,
+			"price":110000,
+			"emote":":computer:",
+			"desc":"G@m3rz laptop"
+		},
+		"rse":{
+			"income":115000,
+			"price":1150000,
+			"emote":":clown:",
+			"desc":"RSE classes"
+		},
+		"wink":{
+			"income":2320000,
+			"price":23200000,
+			"emote":":wink:",
+			"desc":"Nod to the HR"
+		},
+		"intern":{
+			"income":25000000,
+			"price":250000000,
+			"emote":":pencil:",
+			"desc":"Signed intership agreement"
+		},
+		"monke":{
+			"income":300000000,
+			"price":3000000000,
+			"emote":":monkey:",
+			"desc":"Joined monke"
+		},
+		"full":{
+			"income":5620000000,
+			"price":56200000000,
+			"emote":":man_in_manual_wheelchair:",
+			"desc":"Saying that you are fullstack to everyone"
+		},
+		"raise":{
+			"income":35000000000,
+			"price":350000000000,
+			"emote":":chart_with_upwards_trend:",
+			"desc":"Getting a raise"
+		}
+	}
+}

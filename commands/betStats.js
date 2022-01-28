@@ -42,7 +42,7 @@ module.exports = {
     		.setTitle('Stats of betting with dog bot.')
     		.setThumbnail('https://i.imgflip.com/3s2dv9.jpg')
     		.setDescription('Total earned: ' + earned + '\nTotal spent: '+ spent + '\nTotal of all balances: ' + balance);
-    	message.channel.send(embed);
+    	message.channel.send({ embeds: [embed] });
 
 		
 		client.users.fetch(userBestBalance).then(myUser =>{
@@ -50,21 +50,21 @@ module.exports = {
     			.setColor('#3368FF')
 				.addField('Top Balance: ' + myUser.username, 'With ' + betData[myUser.id].balance + ' dogcoins')
 				.setThumbnail(myUser.avatarURL());
-			message.channel.send(embed);
+			message.channel.send({ embeds: [embed] });
 		})
 		client.users.fetch(userBestEarned).then(myUser =>{
 			const embed = new discord.MessageEmbed()
     			.setColor('#3368FF')
 				.addField('Top Earned: ' + myUser.username, 'With ' + betData[myUser.id].earned + ' dogcoins earned')
 				.setThumbnail(myUser.avatarURL());
-			message.channel.send(embed);
+			message.channel.send({ embeds: [embed] });
 		})
 		client.users.fetch(userBestSpent).then(myUser =>{
 			const embed = new discord.MessageEmbed()
     			.setColor('#3368FF')
 				.addField('Top Spent: ' + myUser.username, 'With ' + betData[myUser.id].spent + ' dogcoins spent')
 				.setThumbnail(myUser.avatarURL());
-			message.channel.send(embed);
+			message.channel.send({ embeds: [embed] });
 		})
 
     	
@@ -76,7 +76,7 @@ module.exports = {
     			.setTitle('<:wut:760160064572358696> Error')
     			.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

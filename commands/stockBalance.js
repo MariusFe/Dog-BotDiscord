@@ -47,7 +47,7 @@ module.exports = {
 						embed.addField(quotes[symbols1[item1]].price.shortName + ' (' + quotes[symbols1[item1]].price.symbol + ')','Amount: ' + stockData[message.author.id].balance[symbols1[item1]].amount + '\nValue: ' + value + quotes[symbols1[item1]].price.currencySymbol + ' (' + quotes[symbols1[item1]].price.regularMarketPrice + quotes[symbols1[item1]].price.currencySymbol + ' each)\nSince purchase: ' + percentage + '%');
 					}
 				}
-				message.channel.send(embed);
+				message.channel.send({ embeds: [embed] });
 		});
 
 
@@ -58,7 +58,7 @@ module.exports = {
     		.setTitle('<:wut:760160064572358696> Error')
     		.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

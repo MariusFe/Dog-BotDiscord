@@ -28,7 +28,7 @@ module.exports = {
 		const embed = new discord.MessageEmbed()
     		.setColor('#3368FF')
     		.setTitle('You succesfully got your fresh start ! You can now start betting.')
-    	message.channel.send(embed);
+    	message.channel.send({ embeds: [embed] });
 
 		function invalidCommand(message,error){
 
@@ -37,7 +37,7 @@ module.exports = {
     			.setTitle('<:wut:760160064572358696> Error')
     			.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

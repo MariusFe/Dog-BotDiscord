@@ -9,8 +9,8 @@ module.exports = {
 		const embed = new discord.MessageEmbed()
     	.setColor('#FF0000')
     	.setTitle('<:wut:760160064572358696> Invalid Command')
-   	 	.setDescription('Are you sure you are using the correct command ? Type `!dog help` to show all the commands');
+   	 	.setDescription('Are you sure you are using the correct command?\n Type `!dog help` to show all the commands');
 
-    	message.channel.send(embed);
+    	message.channel.send({ embeds: [embed] });
 	}
 }

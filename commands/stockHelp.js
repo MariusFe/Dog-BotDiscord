@@ -24,7 +24,7 @@ module.exports = {
                 .addField('soon:tm: convert *FromThisCurrency* *ToThisCurrency* *amount*','Convert your currency into another one, can help to buy shares in other stock markets')
     			.setFooter('Made by ' + myUser.tag, myUser.avatarURL());
 
-    			message.channel.send(embed);
+    			message.channel.send({ embeds: [embed] });
     		})
 	}
 }

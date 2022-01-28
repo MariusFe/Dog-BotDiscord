@@ -41,7 +41,7 @@ module.exports = {
     		.setColor('#3368FF')
     		.setThumbnail('https://bon-toutou-90.webself.net/file/si939013/1883A4C1-9182-4B76-8F95-C5C770D74901-fi14369250x1000.jpeg')
     		.setTitle('Thank you master !')
-    	message.channel.send(embed);
+    	message.channel.send({ embeds: [embed] });
 
     	function invalidCommand(message){
 
@@ -50,7 +50,7 @@ module.exports = {
     		.setTitle('<:wut:698139865480429662> Not in DM')
     		.setDescription('This command cannot work in DM (until now)');
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

@@ -10,14 +10,14 @@
   "author": "Marius",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.10",
     "coingecko-api": "^1.0.10",
-    "discord.js": "^12.5.1",
-    "git": "^0.1.5",
+    "discord.js": "^13.5.0",
+    "dotenv": "^14.3.2",
     "request": "^2.88.2",
     "weather-js": "^2.0.0",
     "weather.js": "^0.1.0",
-    "ws": "^7.4.2",
+    "ws": "^8.4.0",
     "yahoo-finance": "^0.3.7",
     "yahoo-stock-prices": "^1.1.0"
   }

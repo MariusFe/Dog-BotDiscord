@@ -59,7 +59,7 @@ module.exports = {
     		.setTitle('<:wut:698139865480429662> Not in DM')
     		.setDescription('This command cannot work in DM (until now)');
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 	}
 }

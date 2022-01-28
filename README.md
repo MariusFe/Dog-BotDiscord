@@ -35,6 +35,18 @@ Here are his main commands, others will follow throughout time:
 
 **stock help**: Show a more detailed help for the stonking
 
+**sex**: Presentation of the SAGI Experience game
+
+**sex help**: Show help page for the SAGI Experience game
+
+**sex profile**: Profile of the player
+
+**sex claim**: Claim the money pending
+
+**sex claim soul**: Claim the QUIF's souls pending
+
+**sex buy *object* *amount***: Buy a certain amount of an add
+
 ## ToDo
 
 - [ ] convert currency to be able to trade in other markets
@@ -53,3 +65,5 @@ For more informations please contact me on Discord: KayaKill#7254
 Made by Marius Ferrieres, 08/2020
 
 Updates v2.0: stonking game, 03/2021
+
+Updates v3.0: SAGI Experience game, 01/2022

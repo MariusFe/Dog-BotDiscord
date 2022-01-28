@@ -33,7 +33,7 @@ module.exports = {
     			.setThumbnail('https://i.ytimg.com/vi/if-2M3K1tqk/maxresdefault.jpg')
     			.setTitle('You won ' + args[2] + ' coins !')
     			.setDescription('You now have ' + betData[message.author.id].balance + ' dogcoins in your balance.')
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
     		betData[message.author.id].earned = parseInt(betData[message.author.id].earned) + parseInt(args[2]);
 		}
 		else{ //lost
@@ -44,7 +44,7 @@ module.exports = {
     			.setThumbnail('https://i.pinimg.com/originals/89/92/ba/8992ba8a5962114770ad9eb4d6be733c.jpg')
     			.setTitle('You lost ' + args[2] + ' coins...')
     			.setDescription('You now have ' + betData[message.author.id].balance + ' dogcoins left in your balance.')
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 
 		fs.writeFile("./data/userDataBet.json", JSON.stringify(betData), (err) => {
@@ -59,7 +59,7 @@ module.exports = {
     		.setTitle('<:wut:760160064572358696> Error')
     		.setDescription(error);
 
-    		message.channel.send(embed);
+    		message.channel.send({ embeds: [embed] });
 		}
 
 	}
